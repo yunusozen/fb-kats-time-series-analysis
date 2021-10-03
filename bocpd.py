@@ -6,28 +6,17 @@ from pprint import pprint
 
 from kats.consts import TimeSeriesData
 from kats.detectors.bocpd import BOCPDetector
+from kats.utils.simulator import Simulator
 
-np.random.seed(100)
-
-df = pd.DataFrame(
-    {
-        "time": pd.date_range("2021-01-01", periods=60),
-        "increase": np.concatenate([np.random.normal(1,0.2,30), np.random.normal(2,0.2,30)])
-    }
-)
-
-ts = TimeSeriesData(df.loc[:,["time", "increase"]])
-# ts.plot(cols=["increase"])
-# plt.show()
-
-df_a = pd.read_csv("./data/air_passengers.csv")
-df_a.columns = ["time", "value"]
-# print(df.head())
-
-ts_a = TimeSeriesData(df_a)
+sim = Simulator(n=450, start="2021-01-01", freq="D")
+ts = sim.level_shift_sim(noise=0.05, seasonal_period=1)
 
 detector = BOCPDetector(ts)
 points = detector.detector()
 
+plt.xticks(rotation=20)
 detector.plot(points)
 plt.show()
+
+changepoint, metadata = points[0]
+pprint(metadata.__dict__)

@@ -26,6 +26,7 @@ m.fit()
 
 fcst = m.predict(steps=30, alpha=0.1)
 
+plt.xticks(rotation=45)
 m.plot()
 plt.show()
 
