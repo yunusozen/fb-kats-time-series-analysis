@@ -14,6 +14,7 @@ Kats is available for download on [PyPI](https://pypi.python.org/pypi/kats/) wit
 - Kats Python package: https://pypi.org/project/kats/0.1.0/
 - Source code repository: https://github.com/facebookresearch/kats
 - Official Tutorials: https://github.com/facebookresearch/Kats/tree/master/tutorials
+- Video Tutorial: https://youtu.be/GzP2xdoVqJE (in Turkish with English subtitles)
 
 ## Contents:
 
@@ -21,6 +22,7 @@ Kats is available for download on [PyPI](https://pypi.python.org/pypi/kats/) wit
 
 - [sarima.py](sarima.py)	Basic Forecasting example with SARIMA Model
 - [prophet.py](prophet.py)	Basic Forecasting example with FB Prophet Model
+- [theta.py](theta.py)	Basic Forecasting example with Theta Model
 - [holtwinters.py](holtwinters.py)    Basic Forecasting example with Holt-Winters Model
 - [ensemble.py](ensemble.py)	      Basic Forecasting example with an Ensemble Model of ARIMA, Prophet, Theta, and Linear Models
 
